@@ -28,6 +28,7 @@ class StartScreen extends React.Component {
     let defaultMessage =
       <div className="start">
         <h1>Welcome to Triviar</h1>
+        <p>Sharpen your trivia skills today.</p>
         <button type="button" className="btn btn-primary start-btn"
           onClick={this.handleClick}>Start</button>
       </div>;
