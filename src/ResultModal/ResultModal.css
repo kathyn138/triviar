@@ -1,0 +1,11 @@
+.correct-header {
+    color: #6BAA75;
+    margin-bottom: 20px;
+}
+.incorrect-header {
+    color: #B33951; 
+    margin-bottom: 20px;
+}
+.result-modal {
+    top: 35%;
+}

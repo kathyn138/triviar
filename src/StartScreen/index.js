@@ -1,5 +1,6 @@
 import React from 'react';
 import Quiz from '../Quiz';
+import './StartScreen.css';
 
 class StartScreen extends React.Component {
   constructor(props) {
@@ -26,10 +27,10 @@ class StartScreen extends React.Component {
     }
 
     let defaultMessage =
-      <div className="start">
+      <div className="start-screen">
         <h1>Welcome to Triviar</h1>
         <p>Sharpen your trivia skills today.</p>
-        <button type="button" className="btn btn-primary start-btn"
+        <button type="button" className="btn btn-primary" id="start-btn"
           onClick={this.handleClick}>Start</button>
       </div>;
 
@@ -43,7 +44,7 @@ class StartScreen extends React.Component {
 
     return (
       startDisplay
-    )
+    );
   }
 }
 
