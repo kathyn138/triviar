@@ -5,7 +5,7 @@ class Question extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      answered: false, 
+      answered: false,
       result: ''
     };
     this.checkAnswer = this.checkAnswer.bind(this);
@@ -42,11 +42,12 @@ class Question extends React.Component {
           currQuestionIdx={this.props.currQuestionIdx}
           handleNewQuestion={this.handleNewQuestion}
           result={this.state.result}
+          correctAnswer={this.props.data.correct}
         /> : ''}
 
         <h2>{this.props.data.question}</h2>
         {this.props.data.choices.map((answer, idx) =>
-          <p key={answer + '-' + idx}><button className="btn"
+          <p key={`${answer}-${idx}`}><button className="btn"
             onClick={this.handleClick}
             value={answer}>{answer}</button></p>
         )}
