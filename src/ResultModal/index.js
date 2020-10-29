@@ -5,8 +5,7 @@ class ResultModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: true,
-      result: ''
+      open: true
     };
     this.toggle = this.toggle.bind(this);
   }
@@ -18,13 +17,9 @@ class ResultModal extends React.Component {
   }
 
   render() {
-    let resultText;
 
-    if (this.props.result === 'correct') {
-      resultText = <p>Correct</p>
-    } else {
-      resultText = <p>Incorrect</p>
-    }
+    let resultHeader = this.props.result[0].toUpperCase()
+      + this.props.result.slice(1);
 
     return (
       <React.Fragment>
@@ -33,7 +28,8 @@ class ResultModal extends React.Component {
             className="result-modal">
             <ModalHeader toggle={this.toggle}></ModalHeader>
             <ModalBody className="text-center">
-              {resultText}
+              <p className={`${this.props.result}-header`}>{resultHeader}</p>
+              <p>The correct answer is: {this.props.correctAnswer}</p>
             </ModalBody>
             <ModalFooter>
             </ModalFooter>
