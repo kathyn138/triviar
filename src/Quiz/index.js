@@ -2,13 +2,6 @@ import React from 'react';
 import Question from '../Question';
 
 class Quiz extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    }
-  }
-
   render() {
     let { questions, currQuestionIdx } = this.props;
     return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import ResultModal from '../ResultModal';
+import './Question.css';
 
 class Question extends React.Component {
   constructor(props) {
@@ -16,12 +17,10 @@ class Question extends React.Component {
 
   checkAnswer(userAnswer) {
     if (userAnswer === this.props.data.correct) {
-      console.log('correct')
       this.props.addScore();
       this.setState({ answered: true, result: 'correct' });
     } else {
       this.setState({ answered: true, result: 'incorrect' });
-      console.log('wrong')
     }
   }
 
@@ -45,9 +44,9 @@ class Question extends React.Component {
           correctAnswer={this.props.data.correct}
         /> : ''}
 
-        <h2>{this.props.data.question}</h2>
+        <h2 className="question">{this.props.data.question}</h2>
         {this.props.data.choices.map((answer, idx) =>
-          <p key={`${answer}-${idx}`}><button className="btn"
+          <p key={`${answer}-${idx}`}><button className="btn btn-light answer-btn"
             onClick={this.handleClick}
             value={answer}>{answer}</button></p>
         )}
