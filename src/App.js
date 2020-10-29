@@ -15,6 +15,7 @@ class App extends React.Component {
     this.addScore = this.addScore.bind(this);
     this.endQuiz = this.endQuiz.bind(this);
     this.resetQuiz = this.resetQuiz.bind(this);
+    this.nextQuestion = this.nextQuestion.bind(this);
   }
 
   componentDidMount() {
@@ -24,10 +25,14 @@ class App extends React.Component {
     });
   }
 // can you do componentdidupdate to check currQIdx, if it's greater then trigger end?
-  nextQuestion() {
-    this.setState((state) => ({
-      currQuestionIdx: state.currQuestionIdx + 1
-    }));
+  nextQuestion(currQIdx) {
+    if (currQIdx < 9) {
+      this.setState((state) => ({
+        currQuestionIdx: state.currQuestionIdx + 1
+      }));
+    } else {
+      this.endQuiz();
+    }
   }
 
   addScore() {
