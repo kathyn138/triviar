@@ -2,6 +2,7 @@ import React from 'react';
 import TriviaApi from './TriviaApi';
 import StartScreen from './StartScreen';
 import EndScreen from './EndScreen';
+import './App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class App extends React.Component {
       questions
     });
   }
-// can you do componentdidupdate to check currQIdx, if it's greater then trigger end?
+
   nextQuestion(currQIdx) {
     if (currQIdx < 9) {
       this.setState((state) => ({
@@ -52,6 +53,7 @@ class App extends React.Component {
     this.setState({
       questions,
       score: 0,
+      currQuestionIdx: 0,
       complete: false
     });
   }
@@ -71,7 +73,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="row justify-content-center align-items-center">
-          <div className="col-8 text-center">
+          <div className="col-8 text-center app-content">
             {display}
           </div>
         </div>
