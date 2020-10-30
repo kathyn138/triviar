@@ -1,4 +1,5 @@
 import React from 'react';
+import './EndScreen.css';
 
 class EndScreen extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class EndScreen extends React.Component {
     return (
       <React.Fragment>
         <p>Your score is: {this.props.score}</p>
-        <button type="button" className="btn btn-primary" id="start-btn"
+        <button type="button" className="btn btn-primary" id="restart-btn"
           onClick={this.handleClick}>Start Over</button>
       </React.Fragment>
     );
